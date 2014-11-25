@@ -17,14 +17,20 @@
 		text-align: right
 		background: url(../img/header-left_bg.png) repeat
 		z-index: 2
-		+box-shadow(0px 5px 0px 0px #BCBBBB)
+		+box-shadow(0px 5px 0px 0px rgba(0,0,0, 0.4))
 		+box
 		&:after
 			content: ""
 			position: absolute
 			top: 0
-			right: -46px
+			right: -40px
 			+s(logo_angle)
+		&:before
+			content: ""
+			position: absolute
+			top: 0
+			right: -41px
+			+arr(41, 130, rgba(0,0,0, 0.4), tl)
 	&__logo
 		display: inline-block
 		img
@@ -44,9 +50,11 @@
 		margin: 0 auto
 		padding-top: 30px
 		text-align: center
+		font-size: 0
 		li
 			display: inline-block
 			a
+				position: relative
 				display: block //TODO LINKS HOVER AND ACTIVE STATE
 				padding: 0 35px
 				text-decoration: none
@@ -57,6 +65,8 @@
 				+nexal //TODO IE8 FONT FIX
 				&.is-active
 					+nexab
+				&:hover
+					+box-shadow(inset 0px -7px 30px 0px rgba(33,154,169,1))
 	.language
 		position: absolute
 		top: 0
@@ -196,11 +206,7 @@
 		+nexal
 	&__set
 		margin-top: 30px
-		text-align: justify
-		&:after
-			content: ""
-			width: 100%
-			display: inline-block
+		+justify
 	.set__item
 		display: inline-block
 		max-width: 200px
@@ -213,10 +219,11 @@
 		i
 			display: block
 			margin: 0 auto 15px
+			cursor: pointer
 		@each $i in 1, 2, 3, 4, 5
 			.icon#{$i}
 				+s(icon#{$i})
-				&:hover
+				&:active
 					+s(icon#{$i}h)
 
 //slots
@@ -232,19 +239,22 @@
 		+ttl
 	&__set
 		margin-top: 45px
-		text-align: justify
-		&:after
-			content: ""
-			width: 100%
-			display: inline-block
+		+justify
 	.set__item
 		display: inline-block
 		width: 280px
+		margin-bottom: 40px
 		border: 1px solid #e4e4e4
 		+box-shadow(1px 1px 10px rgba(0,0,0,.5))
 		+box
 	.set__img
+		position: relative
 		height: 200px
+	.btn
+		position: absolute
+		display: block
+		right: 20px
+		bottom: 14px
 	.set__txt
 		padding: 0 0 25px 25px
 		color: #444
@@ -253,3 +263,120 @@
 	.is-small
 		color: #C7C7C7
 		+fs(11)
+
+//contact
+.contact
+	width: 100%
+	max-width: 920px
+	margin: 180px auto 30px
+	text-align: center
+	&__ttl
+		+fs(48)
+		+ttl
+	&__in
+		margin-top: 95px
+		form
+			+justify
+	.textarea
+		display: inline-block
+		width: 275px
+		height: 225px
+		padding: 17px 12px
+		background-color: #e8e8e8
+		resize: none
+		+fs(18)
+		+placeholder-color(#5e5e5e)
+		+box-shadow(1px 1px 1px #fff, inset 1px 1px 4px rgba(19,19,19,.15))
+		+g(#dddddd, #e8e8e8)
+		+box
+		+nexal
+	.input
+		display: inline-block
+		width: 275px
+		text-align: center
+		vertical-align: top
+		input
+			display: block
+			width: 100%
+			height: 48px
+			margin-bottom: 10px
+			padding: 0 7px
+			background-color: #e8e8e8
+			+fs(18)
+			+placeholder-color(#5e5e5e)
+			+box-shadow(1px 1px 1px #fff, inset 1px 1px 4px rgba(19,19,19,.15))
+			+g(#dedede, #e7e7e7)
+			+box
+			+nexal
+	.info
+		display: inline-block
+		padding-top: 67px
+		vertical-align: top
+		color: #1E1E1E
+		+fs(18)
+		+nexal
+		+box
+		p
+			margin-bottom: 20px
+		i
+			display: inline-block
+			margin-right: 10px
+			vertical-align: middle
+		a
+			display: inline-block
+			padding-top: 12px
+			vertical-align: middle
+			color: #1E1E1E
+		.ico_call
+			+s(call)
+		.ico_mail
+			+s(mail)
+	.btn
+		margin-top: 5px
+		span
+			&:first-child
+				padding: 0 8px 0 2px
+		.ico_send
+			vertical-align: middle
+			+border-radius(0)
+			+s(send)
+			&:before
+				display: none
+			&.another
+				+s(send-active)
+
+//footer
+.footer
+	width: 100%
+	max-width: 1920px
+	height: 498px
+	margin: 0 auto
+	background: url(../img/footer-bg.jpg) center center no-repeat
+	&__in
+		width: 100%
+		max-width: 920px
+		padding-top: 210px
+		margin: 0 auto
+		color: #fff
+		text-align: center
+		+fs(17)
+		+nexal
+	&__menu
+		margin-top: 12px
+		li
+			display: inline-block
+			&:first-child
+				a
+					&:before
+						display: none
+		a
+			position: relative
+			padding: 0 25px 0 23px
+			text-transform: uppercase
+			color: #FFF
+			+fs(14)
+			&:before
+				content: "/"
+				position: absolute
+				top: 0
+				left: -3px

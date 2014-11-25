@@ -53,6 +53,16 @@ body
 	font-size: 12px
 	line-height: 1.4
 
+//fonts
++font(nexa-light, Nexa-Light)
++font(nexa-bold, Nexa-Bold)
+
+=nexal
+	font-family: 'Nexa-Light', Arial, sans-serif
+=nexab
+	font-family: 'Nexa-Bold', Arial, sans-serif
+
+
 // common blocks
 .onleft
 	float: left
@@ -66,17 +76,65 @@ body
 	min-width: 320px
 	margin: 0 auto
 
+.btn
+	position: relative
+	display: inline-block
+	text-transform: uppercase
+	font-size: 0
+	color: #fff
+	background: url(../img/btn-bg.png) repeat-x
+	line-height: 46px
+	+box
+	&:before
+		content: ""
+		position: absolute
+		left: -10px
+		+s(arr-left)
+	&:after
+		content: ""
+		position: absolute
+		right: -10px
+		+s(arr-right)
+	&:hover
+		background: url(../img/btn-bg-h.png) repeat-x
+		&:before
+			+s(arr-left-h)
+		&:after
+			+s(arr-right-h)
+		span
+			&:first-child
+				border-right: 1px solid #F5B74B
+		i
+			&:before
+				+s(moar1-h)
+	&:active
+		background: url(../img/btn-bg-active.png) repeat-x
+		&:before
+			+s(arr-left-active)
+		&:after
+			+s(arr-right-active)
+	span
+		padding: 0 10px
+		font-size: 18px
+		display: inline-block
+		vertical-align: middle
+		+nexal
+		&:first-child
+			border-right: 1px solid #1d232e
+	i
+		position: relative
+		display: inline-block
+		vertical-align: -3px
+		background: #fff
+		padding: 2px
+		+border-radius(50%)
+		&:before
+			content: ""
+			display: block
+			margin-left: 2px
+			+s(moar1)
 a
 	text-decoration: none
-
-//fonts
-+font(nexa-light, Nexa-Light)
-+font(nexa-bold, Nexa-Bold)
-
-=nexal
-	font-family: 'Nexa-Light', Arial, sans-serif
-=nexab
-	font-family: 'Nexa-Bold', Arial, sans-serif
 
 //ie8
 .ie8
@@ -98,6 +156,12 @@ a
 	+fs(39)
 	+nexab //TODO CHANGE ON NEXA HEAVY
 
+=justify
+	text-align: justify
+	&:after
+		content: ""
+		width: 100%
+		display: inline-block
 
 
 

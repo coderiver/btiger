@@ -30,4 +30,12 @@ head.ready(function() {
 		}
 	});
 
+	//more button
+	$('.btn').mouseenter(function(event) {
+		$(this).find('.ico_send').addClass('another');
+	});
+	$('.btn').mouseleave(function(event) {
+		$(this).find('.ico_send').removeClass('another');
+	});
+
 });
