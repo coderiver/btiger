@@ -9,11 +9,122 @@
 	<!-- <meta name="viewport" content="initial-scale=1, user-scalable=no"> -->
 	<link rel="stylesheet" media="all" href="css/screen.css" >
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
+	<!--[if IE 8]><script src="js/lib/css-mediaqueries.js"></script><![endif]-->
 </head>
 <body>
 <!-- BEGIN  out-->
 <div class="out">
-
+	<header class="header">
+		<div class="header__left onleft">
+			<a class="header__logo" href="#">
+				<img src="img/logo.png" alt="B-tiger">
+			</a>
+		</div>
+		<div class="header__top"></div>
+		<ul class="nav">
+			<li><a class="is-active" href="#">Home</a></li>
+			<li><a href="#about">About Us</a></li>
+			<li><a href="#slots">Slots</a></li>
+			<li><a href="#">Contact Us</a></li>
+		</ul>
+		<div class="language">
+			<a href="#">En</a>
+			<a href="#">Rs</a>
+		</div>
+	</header>
+	<div class="main">
+		<div class="cycle-wrap">
+			<div class="cycle-slideshow"
+				data-cycle-pause-on-hover="true"
+				data-cycle-slides="> a"
+				data-cycle-prev=".cycle-prev"
+				data-cycle-next=".cycle-next"
+			>
+				<a href="#"><img src="img/slides/slide1.jpg"></a>
+				<a href="#"><img src="img/slides/slide2.jpg"></a>
+				<a href="#"><img src="img/slides/slide3.jpg"></a>
+				<a href="#"><img src="img/slides/slide4.jpg"></a>
+				<div class="cycle-pager"></div>
+			</div>
+			<div class="cycle-prev"></div>
+			<div class="cycle-next"></div>
+			<div class="progress-bar"></div>
+		</div>
+		<a name="about">
+			<div class="about">
+				<div class="about__in">
+					<p class="about__ttl">About Us</p>
+					<div class="about__txt">
+						<p>Within our modular software we have different models for clients interested in B2B casino software solutions. We combine the experience of over twenty years of software development with contemporary technology, industry/market knowledge. Presented in Full HD resolution, our broad variety of everlasting gaming classics and thrilling newbies is compatible with all devices.</p>
+						<p>A true HTML5 revolution, our software is optimised for IOS and Android and fully browser compatible, which means it runs reliably on every mobile phone, tablet, computer or terminal there is in the market specialised in scaling the server infrastructure we support you with a strong back office.</p>
+					</div>
+					<img src="img/arrow.png" alt="arrow">
+				</div>
+			</div>
+		</a>
+		<div class="development">
+			<p class="development__ttl">Agile Development</p>
+			<p class="development__subttl">Developing for the future</p>
+			<img src="img/arrow2.png" alt="arrow">
+			<div class="development__set">
+				<div class="set__item">
+					<i class="icon1"></i>
+					German engineering
+				</div>
+				<div class="set__item">
+					<i class="icon2"></i>
+					Technology innovation
+				</div>
+				<div class="set__item">
+					<i class="icon3"></i>
+					Operational excellence
+				</div>
+				<div class="set__item">
+					<i class="icon4"></i>
+					Customisable solutions
+				</div>
+				<div class="set__item">
+					<i class="icon5"></i>
+					Certified security standards
+				</div>
+			</div>
+		</div>
+		<a name="slots">
+			<div class="slots">
+				<p class="slots__ttl">Slots</p>
+				<img src="img/underline.png" alt="underline">
+				<div class="slots__set">
+					<div class="set__item">
+						<div class="set__img">
+							<img src="img/slots/pirates.png" alt="pirates">
+						</div>
+						<div class="set__txt">
+							<p class="is-small">Slot games</p>
+							<p>Pirates</p>
+						</div>
+					</div>
+					<div class="set__item">
+						<div class="set__img">
+							<img src="img/slots/underwater.png" alt="underwater">
+						</div>
+						<div class="set__txt">
+							<p class="is-small">Slot games</p>
+							<p>Danger Underwater</p>
+						</div>
+					</div>
+					<div class="set__item">
+						<div class="set__img">
+							<img src="img/slots/freak.png" alt="underwater">
+						</div>
+						<div class="set__txt">
+							<p class="is-small">Slot games</p>
+							<p>Mummy</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</a>
+	</div>
 </div>
 <!-- END out-->
 <!-- load scripts -->

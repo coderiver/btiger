@@ -34,11 +34,11 @@
 //     @each $s in a,b,c
 // 	    	#{$s}
 //				display: none
-// ## fonts 
+// ## fonts
 // Save fonts to /css/fonts, after that write (eot, woff, ttf):
-// +font(book, cytiapro-black-webfont)  
+// +font(book, cytiapro-black-webfont)
 // =book
-// 	font-family: "book", Arial, sans-serif 
+// 	font-family: "book", Arial, sans-serif
 // insert pics into css
 // div
 // 	+pic("blabla.png")
@@ -49,18 +49,54 @@
 
 
 body
-	font-family: Arial, sans-serif 
-	font-size: 12px 
+	font-family: Arial, sans-serif
+	font-size: 12px
 	line-height: 1.4
 
+// common blocks
+.onleft
+	float: left
 
-// common blocks      
+.onright
+	float: right
 
+.out
+	position: relative
+	max-width: 1920px
+	min-width: 320px
+	margin: 0 auto
 
+a
+	text-decoration: none
 
+//fonts
++font(nexa-light, Nexa-Light)
++font(nexa-bold, Nexa-Bold)
 
+=nexal
+	font-family: 'Nexa-Light', Arial, sans-serif
+=nexab
+	font-family: 'Nexa-Bold', Arial, sans-serif
 
+//ie8
+.ie8
+	.header
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000)
 
+.ie
+	.about__txt
+		p
+			float: left
+			width: 430px
+			&:first-child
+				margin-right: 40px
+
+//mixins
+=ttl
+	text-transform: uppercase
+	color: #CCC
+	+fs(39)
+	+nexab //TODO CHANGE ON NEXA HEAVY
 
 
 

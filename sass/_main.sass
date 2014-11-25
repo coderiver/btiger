@@ -1,216 +1,255 @@
-// Normally mainpage styles
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//header and top nav
+.header
+	position: absolute
+	top: 0
+	width: 100%
+	max-width: 1920px
+	margin: 0 auto
+	background: rgba(0,0,0, 0.5)
+	z-index: 200
+	+clr
+	&__left
+		position: relative
+		width: 100%
+		max-width: 500px
+		height: 125px
+		padding: 5px 40px 0 20px
+		text-align: right
+		background: url(../img/header-left_bg.png) repeat
+		z-index: 2
+		+box-shadow(0px 5px 0px 0px #BCBBBB)
+		+box
+		&:after
+			content: ""
+			position: absolute
+			top: 0
+			right: -46px
+			+s(logo_angle)
+	&__logo
+		display: inline-block
+		img
+			width: 100%
+			max-width: 287px
+	&__top
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		height: 30px
+		background: #fba40d
+		+g(#fdcb61, #fba40d)
+	.nav
+		width: 100%
+		max-width: 920px
+		margin: 0 auto
+		padding-top: 30px
+		text-align: center
+		li
+			display: inline-block
+			a
+				display: block //TODO LINKS HOVER AND ACTIVE STATE
+				padding: 0 35px
+				text-decoration: none
+				text-transform: uppercase
+				color: #FFF
+				line-height: 95px
+				font-size: 18px
+				+nexal //TODO IE8 FONT FIX
+				&.is-active
+					+nexab
+	.language
+		position: absolute
+		top: 0
+		right: 9.89%
+		font-size: 0
+		+border-radius(0 0 15px 15px)
+		+box-shadow(1px 0px 5px 0px #000)
+		a
+			display: inline-block
+			padding: 6px 5px 6px 5px
+			text-transform: uppercase
+			color: #000
+			background: #FFB82C
+			border-left: 1px solid #fff
+			letter-spacing: 1.35px
+			+g(#fdcb61, #fba40d)
+			+fs(21)
+			+nexal
+			+box
+			+border-radius(0 0 15px 0)
+			&:first-child
+				+border-radius(0 0 0 15px)
+			&:active
+				background: #F3BA50
+				border-left-color: #F3BA50
+//cycle
+.cycle-wrap
+	position: relative
+	width: 100%
+	max-height: 695px
+	overflow: hidden //TODO IE9 SLIDER FIX
+	.cycle-slideshow
+		&:first-child
+			display: block
+		a
+			display: none
+	img
+		width: 100%
+		height: 100%
+
+.cycle-prev,
+.cycle-next
+	position: absolute
+	top: 54%
+	z-index: 250
+	cursor: pointer
+
+.cycle-prev
+	left: 5.4%
+	+s(prev)
+.cycle-next
+	right: 5.4%
+	+s(next)
+
+.cycle-pager
+	position: absolute
+	width: 100%
+	bottom: 10px
+	text-align: center
+	z-index: 250
+	span
+		display: inline-block
+		font-size: 25px
+		width: 15px
+		height: 15px
+		color: #000
+		cursor: pointer
+	.cycle-pager-active
+		color: #F68600
+
+.progress-bar
+	position: absolute
+	display: block
+	bottom: 0
+	height: 4px
+	background: #F68600
+	z-index: 250
+
+//about
+.about
+	position: relative
+	width: 100%
+	max-width: 1920px
+	height: 646px
+	margin: 0 auto
+	background: url(../img/about-bg.jpg) center center no-repeat
+	&__in
+		width: 100%
+		max-width: 920px
+		padding-top: 165px
+		margin: 0 auto
+		color: #a3a4a5
+		+fs(14)
+		+nexal
+		img
+			width: 100%
+			height: 100%
+			display: block
+			margin: 20px auto 0
+		+r(600)
+			padding-top: 25.5%
+	&__ttl
+		text-transform: uppercase
+		text-align: center
+		+fs(48)
+		+r(600)
+			+fs(40)
+	&__txt
+		margin-top: 40px
+		padding: 0 15px
+		-webkit-column-count: 2
+		-moz-column-count: 2
+		-moz-column-gap: 30px
+		-webkit-column-gap: 30px
+		+box
+		+clr
+		+r(600)
+			-webkit-column-count: 1
+			-moz-column-count: 1
+
+//development
+.development
+	width: 100%
+	max-width: 1282px
+	margin: 0 auto
+	padding-top: 330px
+	text-align: center
+	img
+		width: 100%
+		max-width: 650px
+	&__ttl
+		+ttl
+	&__subttl
+		text-transform: uppercase
+		color: #676767
+		+fs(30)
+		+nexal
+	&__set
+		margin-top: 30px
+		text-align: justify
+		&:after
+			content: ""
+			width: 100%
+			display: inline-block
+	.set__item
+		display: inline-block
+		max-width: 200px
+		margin-bottom: 30px
+		text-transform: uppercase
+		text-align: center
+		color: #3C3C3C
+		+fs(18)
+		+nexab
+		i
+			display: block
+			margin: 0 auto 15px
+		@each $i in 1, 2, 3, 4, 5
+			.icon#{$i}
+				+s(icon#{$i})
+				&:hover
+					+s(icon#{$i}h)
+
+//slots
+.slots
+	width: 100%
+	max-width: 920px
+	margin: 70px auto 0
+	text-align: center
+	img
+		width: 100%
+		max-width: 648px
+	&__ttl
+		+ttl
+	&__set
+		margin-top: 45px
+		text-align: justify
+		&:after
+			content: ""
+			width: 100%
+			display: inline-block
+	.set__item
+		display: inline-block
+		width: 280px
+		border: 1px solid #e4e4e4
+		+box-shadow(1px 1px 10px rgba(0,0,0,.5))
+		+box
+	.set__img
+		height: 200px
+	.set__txt
+		padding: 0 0 25px 25px
+		color: #444
+		+fs(20)
+		+nexal
+	.is-small
+		color: #C7C7C7
+		+fs(11)
