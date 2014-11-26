@@ -49,9 +49,9 @@ body { font-family: Arial, sans-serif; font-size: 12px; line-height: 1.4; }
 
 a { text-decoration: none; }
 
+.ie8 .out { min-width: 1336px; }
 .ie8 .header { filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000); }
 .ie8 .header .header__left:before { display: none; }
-.ie8 .header .nav { display: block !important; z-index: 1000; }
 .ie8 .btn { line-height: 44px; }
 .ie8 .contact .input input { padding-top: 12px; }
 
@@ -64,7 +64,7 @@ a { text-decoration: none; }
 .l .l-col1 { float: left; width: 20%; }
 .l .l-col2 { float: right; width: 70%; }
 
-.header { position: absolute; top: 0; width: 100%; max-width: 1920px; margin: 0 auto; background: rgba(0, 0, 0, 0.5); z-index: 200; *zoom: 1; }
+.header { position: fixed; top: 0; width: 100%; max-width: 1920px; margin: 0 auto; background: rgba(0, 0, 0, 0.5); z-index: 200; *zoom: 1; }
 .header:after { content: " "; display: table; clear: both; }
 @media only screen and (max-width: 830px) { .header { z-index: 300; } }
 .header__left { position: relative; width: 100%; max-width: 500px; height: 125px; padding: 5px 40px 0 20px; text-align: right; background: url(../img/header-left_bg.png) repeat; z-index: 2; -moz-box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.4); -webkit-box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.4); box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.4); -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
