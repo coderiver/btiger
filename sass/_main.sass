@@ -8,6 +8,8 @@
 	background: rgba(0,0,0, 0.5)
 	z-index: 200
 	+clr
+	+r(830)
+		z-index: 300
 	&__left
 		position: relative
 		width: 100%
@@ -31,11 +33,28 @@
 			top: 0
 			right: -41px
 			+arr(41, 130, rgba(0,0,0, 0.4), tl)
+		+r(1336)
+			max-width: 300px
+			padding-top: 20px
+		+r(600)
+			max-width: 200px
+			height: 80px
+			padding: 10px 5% 0 20px
+			box-shadow: none
+			&:before,
+			&:after
+				display: none
 	&__logo
 		display: inline-block
 		img
 			width: 100%
 			max-width: 287px
+		+r(1336)
+			img
+				max-width: 200px
+		+r(600)
+			img
+				max-width: 100%
 	&__top
 		position: absolute
 		top: 0
@@ -51,11 +70,13 @@
 		padding-top: 30px
 		text-align: center
 		font-size: 0
+		&.is-open
+			display: block
 		li
 			display: inline-block
 			a
 				position: relative
-				display: block //TODO LINKS HOVER AND ACTIVE STATE
+				display: block
 				padding: 0 35px
 				text-decoration: none
 				text-transform: uppercase
@@ -65,8 +86,52 @@
 				+nexal //TODO IE8 FONT FIX
 				&.is-active
 					+nexab
+					&:before
+						content: ""
+						position: absolute
+						top: 0
+						left: 50%
+						margin-left: -10px
+						+arr(20, 13, #fba40d, b)
 				&:hover
 					+box-shadow(inset 0px -7px 30px 0px rgba(33,154,169,1))
+		+r(1024)
+			padding-left: 330px
+			text-align: left
+			+box
+			li
+				a
+					padding: 0 20px
+		+r(830)
+			display: none
+			position: absolute
+			width: auto
+			top: 125px
+			right: 0
+			padding: 0
+			text-align: right
+			background: rgba(0,0,0, 0.5)
+			+border-radius(0 0 5px 5px)
+			li
+				display: block
+				a
+					line-height: 2
+					&:before
+						display: none
+		+r(600)
+			top: 80px
+	.fa.fa-bars
+		display: none
+		position: absolute
+		top: 59px
+		right: 20px
+		font-size: 30px
+		color: #FFF
+		cursor: pointer
+		+r(830)
+			display: block
+		+r(600)
+			top: 39px
 	.language
 		position: absolute
 		top: 0
@@ -92,12 +157,23 @@
 			&:active
 				background: #F3BA50
 				border-left-color: #F3BA50
+		+r(1024)
+			right: 20px
+			a
+				+fs(18)
+		+r(600)
+			a
+				+fs(16)
+
 //cycle
 .cycle-wrap
 	position: relative
 	width: 100%
+	min-height: 250px
 	max-height: 695px
-	overflow: hidden //TODO IE9 SLIDER FIX
+	overflow: hidden
+	+r(600)
+		padding-top: 30px
 	.cycle-slideshow
 		&:first-child
 			display: block
@@ -106,6 +182,7 @@
 	img
 		width: 100%
 		height: 100%
+		min-height: 250px
 
 .cycle-prev,
 .cycle-next
@@ -113,6 +190,9 @@
 	top: 54%
 	z-index: 250
 	cursor: pointer
+	+r(600)
+		top: 50%
+		margin-top: -18.5px
 
 .cycle-prev
 	left: 5.4%
@@ -184,6 +264,7 @@
 		+box
 		+clr
 		+r(600)
+			padding: 0 20px
 			-webkit-column-count: 1
 			-moz-column-count: 1
 
@@ -197,16 +278,28 @@
 	img
 		width: 100%
 		max-width: 650px
+	+r(1336)
+		padding-top: 25%
 	&__ttl
 		+ttl
+		+box
+		+r(600)
+			padding: 0 5px
+			+fs(35)
 	&__subttl
 		text-transform: uppercase
 		color: #676767
 		+fs(30)
+		+box
 		+nexal
+		+r(600)
+			padding: 0 5px
+			+fs(26)
 	&__set
 		margin-top: 30px
 		+justify
+		+r(1336)
+			text-align: center
 	.set__item
 		display: inline-block
 		max-width: 200px
@@ -225,6 +318,8 @@
 				+s(icon#{$i})
 				&:active
 					+s(icon#{$i}h)
+		+r(1336)
+			margin: 0 2% 30px
 
 //slots
 .slots
@@ -240,6 +335,8 @@
 	&__set
 		margin-top: 45px
 		+justify
+		+r(1024)
+			text-align: center
 	.set__item
 		display: inline-block
 		width: 280px
@@ -247,6 +344,8 @@
 		border: 1px solid #e4e4e4
 		+box-shadow(1px 1px 10px rgba(0,0,0,.5))
 		+box
+		+r(1024)
+			margin: 0 2% 40px
 	.set__img
 		position: relative
 		height: 200px
@@ -257,6 +356,7 @@
 		bottom: 14px
 	.set__txt
 		padding: 0 0 25px 25px
+		text-align: left
 		color: #444
 		+fs(20)
 		+nexal
@@ -270,13 +370,21 @@
 	max-width: 920px
 	margin: 180px auto 30px
 	text-align: center
+	+r(1024)
+		margin-top: 15%
 	&__ttl
 		+fs(48)
 		+ttl
+		+r(600)
+			+fs(40)
 	&__in
 		margin-top: 95px
 		form
 			+justify
+		+r(1024)
+			margin-top: 50px
+			form
+				text-align: center
 	.textarea
 		display: inline-block
 		width: 275px
@@ -290,6 +398,10 @@
 		+g(#dddddd, #e8e8e8)
 		+box
 		+nexal
+		+r(1024)
+			margin: 0 1%
+		+r(600)
+			margin-bottom: 20px
 	.input
 		display: inline-block
 		width: 275px
@@ -308,6 +420,8 @@
 			+g(#dedede, #e7e7e7)
 			+box
 			+nexal
+		+r(1024)
+			margin: 0 1%
 	.info
 		display: inline-block
 		padding-top: 67px
@@ -331,19 +445,23 @@
 			+s(call)
 		.ico_mail
 			+s(mail)
+		+r(1024)
+			margin: 0 1%
+		+r(600)
+			padding-top: 50px
 	.btn
 		margin-top: 5px
 		span
 			&:first-child
 				padding: 0 8px 0 2px
-		.ico_send
-			vertical-align: middle
-			+border-radius(0)
-			+s(send)
-			&:before
+		i
+			background: none
+			&:after
 				display: none
-			&.another
-				+s(send-active)
+		.fa.fa-paper-plane
+			+fs(20)
+			vertical-align: middle
+			color: #FFF
 
 //footer
 .footer
@@ -380,3 +498,12 @@
 				position: absolute
 				top: 0
 				left: -3px
+		+r(830)
+			margin-top: 20px
+			li
+				display: block
+				a
+					margin-bottom: 15px
+					&:before
+						display: none
+

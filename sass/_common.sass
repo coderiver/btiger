@@ -56,11 +56,14 @@ body
 //fonts
 +font(nexa-light, Nexa-Light)
 +font(nexa-bold, Nexa-Bold)
++font(FontAwesome, fontawesome-webfont)
 
 =nexal
 	font-family: 'Nexa-Light', Arial, sans-serif
 =nexab
 	font-family: 'Nexa-Bold', Arial, sans-serif
+=fa
+	font-family: "FontAwesome", Myriad Pro, Arial, sans-serif
 
 
 // common blocks
@@ -104,9 +107,8 @@ body
 		span
 			&:first-child
 				border-right: 1px solid #F5B74B
-		i
-			&:before
-				+s(moar1-h)
+		.fa.fa-play
+			color: #f09925
 	&:active
 		background: url(../img/btn-bg-active.png) repeat-x
 		&:before
@@ -121,18 +123,15 @@ body
 		+nexal
 		&:first-child
 			border-right: 1px solid #1d232e
-	i
-		position: relative
-		display: inline-block
-		vertical-align: -3px
+	.fa.fa-play
+		padding: 1px
 		background: #fff
-		padding: 2px
+		font-size: 15.5px
+		color: #0D1018
 		+border-radius(50%)
 		&:before
-			content: ""
-			display: block
-			margin-left: 2px
-			+s(moar1)
+			margin-left: 3px
+
 a
 	text-decoration: none
 
@@ -140,6 +139,19 @@ a
 .ie8
 	.header
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000)
+		.header__left
+			&:before
+				display: none
+		.nav
+			display: block !important
+			z-index: 1000
+
+	.btn
+		line-height: 44px
+	.contact
+		.input
+			input
+				padding-top: 12px
 
 .ie
 	.about__txt
@@ -147,7 +159,11 @@ a
 			float: left
 			width: 430px
 			&:first-child
-				margin-right: 40px
+				margin-right: 30px
+		+r(1024)
+			p
+				float: none
+				width: 100%
 
 //mixins
 =ttl

@@ -30,12 +30,9 @@ head.ready(function() {
 		}
 	});
 
-	//more button
-	$('.btn').mouseenter(function(event) {
-		$(this).find('.ico_send').addClass('another');
-	});
-	$('.btn').mouseleave(function(event) {
-		$(this).find('.ico_send').removeClass('another');
+	//menu far-bar
+	$('.fa-bars').click(function(event) {
+		$(this).parent().find('.nav').toggleClass('is-open');
 	});
 
 });
