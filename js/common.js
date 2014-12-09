@@ -35,4 +35,9 @@ head.ready(function() {
 		$(this).parent().find('.nav').toggleClass('is-open');
 	});
 
+	$('.nav a').click(function(event) {
+		$('.nav a').removeClass('is-active');
+		$(this).addClass('is-active');
+	});
+
 });

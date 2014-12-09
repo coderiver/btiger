@@ -50,8 +50,10 @@
 
 body
 	font-family: Arial, sans-serif
-	font-size: 12px
+	font-size: 14px
 	line-height: 1.4
+	+r(600)
+		margin-top: 50px
 
 //fonts
 +font(nexa-light, Nexa-Light)
@@ -167,8 +169,10 @@ a
 =ttl
 	text-transform: uppercase
 	color: #CCC
-	+fs(39)
-	+nexab //TODO CHANGE ON NEXA HEAVY
+	+fs(48)
+	+nexab
+	+r(600)
+		+fs(40)
 
 =justify
 	text-align: justify
