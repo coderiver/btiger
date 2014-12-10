@@ -6,7 +6,7 @@
 	max-width: 1920px
 	margin: 0 auto
 	background: rgba(0,0,0, 0.5)
-	z-index: 200
+	z-index: 300
 	+clr
 	+r(830)
 		z-index: 300
@@ -85,7 +85,7 @@
 				color: #FFF
 				line-height: 95px
 				font-size: 18px
-				+nexal 
+				+nexal
 				&.is-active
 					+nexab
 					&:before
@@ -254,14 +254,16 @@
 			height: 100%
 			display: block
 			margin: 20px auto 0
+		+r(830)
+			padding-top: 23%
 		+r(600)
-			padding-top: 25.5%
+			padding-top: 10%
 	&__ttl
 		text-transform: uppercase
 		text-align: center
 		+fs(48)
 		+r(600)
-			+fs(40)
+			+fs(35)
 	&__txt
 		margin-top: 40px
 		padding: 0 15px
@@ -272,7 +274,9 @@
 		+box
 		+clr
 		+r(600)
+			margin-top: 20px
 			padding: 0 20px
+			font-size: 13px
 			-webkit-column-count: 1
 			-moz-column-count: 1
 
@@ -293,15 +297,12 @@
 		+box
 		+r(600)
 			padding: 0 5px
-			+fs(35)
 	&__subttl
 		text-transform: uppercase
 		color: #676767
 		+fs(18)
 		+box
 		+nexal
-		+r(600)
-			padding: 0 5px
 	&__set
 		margin-top: 30px
 		+justify
@@ -320,6 +321,7 @@
 			display: block
 			margin: 0 auto 15px
 			cursor: pointer
+			-webkit-tap-highlight-color: transparent
 		@each $i in 1, 2, 3, 4, 5
 			.icon#{$i}
 				+s(icon#{$i})
